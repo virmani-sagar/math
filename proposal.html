@@ -1,0 +1,885 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Personalised one-to-one mathematics training proposal for Grade 6 and Grade 8 students.">
+<meta name="theme-color" content="#101828">
+<title>Mathematics Training Proposal | openEd Labs</title>
+
+<style>
+:root {
+  --blue: #315efb;
+  --navy: #101828;
+  --muted: #667085;
+  --light: #f5f7fc;
+  --border: #e5eaf3;
+  --green: #16834a;
+  --green-bg: #e8f7ee;
+  --red: #a33c3c;
+  --red-bg: #fff0ef;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Inter, Arial, sans-serif;
+  background: #fafbfe;
+  color: #172033;
+  line-height: 1.6;
+}
+
+a { text-decoration: none; }
+
+.topbar {
+  background: var(--navy);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  letter-spacing: .3px;
+}
+
+.topbar a {
+  color: white;
+  font-weight: 700;
+}
+
+header {
+  max-width: 1100px;
+  margin: auto;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--navy);
+  letter-spacing: -1px;
+}
+
+.logo span { color: var(--blue); }
+
+.back-link {
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px 22px 65px;
+}
+
+.intro {
+  padding: 35px 0;
+}
+
+.label {
+  display: inline-block;
+  background: #eaf0ff;
+  color: #3150b8;
+  padding: 7px 13px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(35px, 5vw, 51px);
+  line-height: 1.15;
+  letter-spacing: -1.8px;
+  margin: 18px 0 12px;
+}
+
+h1 span { color: var(--blue); }
+
+.intro p {
+  color: var(--muted);
+  max-width: 720px;
+  font-size: 16px;
+}
+
+section { margin-top: 38px; }
+
+.section-heading { margin-bottom: 18px; }
+
+h2 {
+  font-size: 25px;
+  letter-spacing: -.6px;
+  margin-bottom: 7px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Pricing */
+
+.price-card {
+  background: linear-gradient(120deg, #17284d, #315efb);
+  border-radius: 20px;
+  padding: 32px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.price-label {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.price {
+  font-size: clamp(37px, 5vw, 49px);
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin: 7px 0;
+}
+
+.price small {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.price-description {
+  color: #dbe5ff;
+  font-size: 13px;
+}
+
+.coupon {
+  border: 1px dashed #ffffff80;
+  background: #ffffff16;
+  border-radius: 14px;
+  padding: 17px 20px;
+  min-width: 210px;
+}
+
+.coupon strong {
+  display: block;
+  font-size: 24px;
+}
+
+.coupon p {
+  color: #e0e8ff;
+  font-size: 12px;
+}
+
+/* Programme */
+
+.program-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.grade {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: #edf1ff;
+  color: var(--blue);
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 19px;
+  margin-bottom: 7px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.class-frequency {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 7px 10px;
+  border-radius: 7px;
+  background: #f0f4ff;
+  color: #3150b8;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Included */
+
+.details {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 19px;
+  border-bottom: 1px solid #edf0f5;
+  font-size: 14px;
+}
+
+.detail-row:last-child { border-bottom: 0; }
+
+.detail-row span {
+  color: var(--muted);
+  text-align: right;
+}
+
+/* Rewards */
+
+.reward-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.reward {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.reward-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.reward h3 {
+  font-size: 16px;
+  margin-bottom: 7px;
+}
+
+.reward p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Schedule */
+
+.schedule-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.schedule-header strong { font-size: 15px; }
+
+.timezone {
+  background: #f1f3f8;
+  padding: 6px 10px;
+  border-radius: 7px;
+  font-size: 11px;
+  color: #475467;
+}
+
+.table-scroll { overflow-x: auto; }
+
+table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 12px;
+}
+
+th {
+  background: #f5f7fb;
+  color: #475467;
+  padding: 14px 8px;
+  font-weight: 800;
+}
+
+td {
+  padding: 14px 8px;
+  border-bottom: 1px solid #edf0f5;
+  border-right: 1px solid #f0f2f6;
+}
+
+td:first-child,
+th:first-child {
+  text-align: left;
+  padding-left: 16px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.available {
+  background: var(--green-bg);
+  color: var(--green);
+  font-weight: 800;
+}
+
+.unavailable {
+  background: var(--red-bg);
+  color: var(--red);
+}
+
+.schedule-note {
+  padding: 13px 17px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* Parent selection */
+
+.preferred {
+  background: #eff3ff;
+  border: 1px solid #dce5ff;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.preferred h3 {
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.preferred p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.preferred ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.preferred li {
+  background: white;
+  border-radius: 10px;
+  padding: 13px;
+  font-size: 13px;
+}
+
+.preferred li strong {
+  display: block;
+  color: var(--blue);
+  margin-bottom: 4px;
+}
+
+/* Trainer */
+
+.trainer {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  padding: 20px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+}
+
+.avatar {
+  width: 55px;
+  height: 55px;
+  display: grid;
+  place-items: center;
+  background: #eaf0ff;
+  color: var(--blue);
+  border-radius: 50%;
+  font-size: 23px;
+  font-weight: 900;
+}
+
+.trainer h3 { font-size: 18px; }
+
+.trainer p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* CTA */
+
+.cta {
+  background: var(--navy);
+  color: white;
+  padding: 32px;
+  border-radius: 18px;
+  margin-top: 42px;
+}
+
+.cta h2 { color: white; }
+
+.cta p {
+  color: #cbd5e1;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.cta a {
+  display: inline-block;
+  background: white;
+  color: #2448c7;
+  padding: 12px 19px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 23px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.footer-inner {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+footer a { color: var(--blue); }
+
+@media(max-width:700px) {
+  header { padding: 18px; }
+  .container { padding: 15px 18px 50px; }
+  .program-grid,
+  .reward-grid { grid-template-columns: 1fr; }
+  .price-card { flex-direction: column; align-items: flex-start; }
+  .coupon { width: 100%; }
+  .preferred ul { grid-template-columns: 1fr; }
+  .detail-row { font-size: 12px; }
+  .intro { padding: 25px 0; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- OPENED LABS BRANDING -->
+
+<div class="topbar">
+  Powered by
+  <a href="https://openedlabs.eduspace.work" target="_blank" rel="noopener">openEd Labs</a>
+  &nbsp; | &nbsp;
+  <a href="https://openedlabs.eduspace.work" target="_blank" rel="noopener">openedlabs.eduspace.work</a>
+</div>
+
+<header>
+  <a href="index.html" class="logo">math<span>.</span></a>
+  <a href="index.html" class="back-link">← Back to Math</a>
+</header>
+
+<main class="container">
+
+<!-- INTRODUCTION -->
+
+<div class="intro">
+  <span class="label">Personalised Mathematics Programme</span>
+
+  <h1>
+    Learning Proposal<br>
+    <span>Grade 6 & Grade 8</span>
+  </h1>
+
+  <p>
+    A personalised one-to-one mathematics training programme
+    for the selected students, aligned with the US Common Core
+    curriculum and designed to improve conceptual understanding,
+    academic performance and confidence.
+  </p>
+</div>
+
+<!-- PRICING -->
+
+<section>
+  <div class="price-card">
+
+    <div>
+      <div class="price-label">MONTHLY PROGRAMME FEE</div>
+
+      <div class="price">
+        ₹14,000 <small>/ month</small>
+      </div>
+
+      <p class="price-description">
+        Combined programme for Grade 6 and Grade 8
+      </p>
+    </div>
+
+    <div class="coupon">
+      <strong>₹1,000 OFF</strong>
+      <p>Special Diwali Coupon</p>
+      <p>Valid through 5 November 2026</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROGRAMME DETAILS -->
+
+<section>
+
+  <div class="section-heading">
+    <h2>Programme Structure</h2>
+    <p>Three classes per week for each grade.</p>
+  </div>
+
+  <div class="program-grid">
+
+    <div class="card">
+      <div class="grade">G6</div>
+
+      <h3>Grade 6 Mathematics</h3>
+
+      <p>
+        Mathematics training following the
+        US Common Core curriculum.
+      </p>
+
+      <div class="class-frequency">
+        3 Classes Per Week
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="grade">G8</div>
+
+      <h3>Grade 8 Mathematics</h3>
+
+      <p>
+        Mathematics training following the
+        US Common Core curriculum.
+      </p>
+
+      <div class="class-frequency">
+        3 Classes Per Week
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHAT IS INCLUDED -->
+
+<section>
+
+  <div class="section-heading">
+    <h2>What's Included</h2>
+    <p>Complete learning support throughout the month.</p>
+  </div>
+
+  <div class="details">
+
+    <div class="detail-row">
+      <strong>Grade 6 Classes</strong>
+      <span>Maximum 14 classes per month</span>
+    </div>
+
+    <div class="detail-row">
+      <strong>Grade 8 Classes</strong>
+      <span>Maximum 14 classes per month</span>
+    </div>
+
+    <div class="detail-row">
+      <strong>Total Monthly Classes</strong>
+      <span>Maximum 28 classes combined</span>
+    </div>
+
+    <div class="detail-row">
+      <strong>Weekly Frequency</strong>
+      <span>3 classes per week per grade</span>
+    </div>
+
+    <div class="detail-row">
+      <strong>Emergency Additional Class</strong>
+      <span>Included when urgently required</span>
+    </div>
+
+    <div class="detail-row">
+      <strong>Learning Format</strong>
+      <span>Live one-to-one online sessions</span>
+    </div>
+
+    <div class="detail-row">
+      <strong>Curriculum</strong>
+      <span>US Common Core</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- PERFORMANCE REWARDS -->
+
+<section>
+
+  <div class="section-heading">
+    <h2>Scholarships, Gifts & Discounts</h2>
+    <p>
+      We believe excellent performance and consistent effort
+      deserve recognition.
+    </p>
+  </div>
+
+  <div class="reward-grid">
+
+    <div class="reward">
+      <div class="reward-icon">🏆</div>
+      <h3>Monthly Scholarships</h3>
+      <p>
+        Scholarship opportunities based on academic
+        performance and improvement.
+      </p>
+    </div>
+
+    <div class="reward">
+      <div class="reward-icon">🎁</div>
+      <h3>Performance Gifts</h3>
+      <p>
+        Special gifts and rewards to recognise
+        students' achievements.
+      </p>
+    </div>
+
+    <div class="reward">
+      <div class="reward-icon">⭐</div>
+      <h3>Special Discounts</h3>
+      <p>
+        Performance-based discounts and benefits
+        for students achieving scores of 90% or above.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- TRAINER AVAILABILITY -->
+
+<section>
+
+  <div class="section-heading">
+    <h2>Trainer Availability</h2>
+    <p>
+      The following timetable represents the current
+      availability provided by the trainer.
+    </p>
+  </div>
+
+  <div class="schedule-card">
+
+    <div class="schedule-header">
+      <strong>Weekly Availability</strong>
+      <span class="timezone">Eastern Standard Time (EST)</span>
+    </div>
+
+    <div class="table-scroll">
+
+      <table>
+        <thead>
+          <tr>
+            <th>Time (EST)</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>4:00 – 5:00 AM</td>
+            <td class="unavailable">—</td>
+            <td class="available">Available</td>
+            <td class="unavailable">—</td>
+            <td class="available">Available</td>
+            <td class="unavailable">—</td>
+            <td class="unavailable">—</td>
+            <td class="unavailable">—</td>
+          </tr>
+
+          <tr>
+            <td>5:00 – 6:00 AM</td>
+            <td class="available">Available</td>
+            <td class="available">Available</td>
+            <td class="available">Available</td>
+            <td class="available">Available</td>
+            <td class="available">Available</td>
+            <td class="unavailable">—</td>
+            <td class="unavailable">—</td>
+          </tr>
+
+          <tr>
+            <td>6:00 – 7:00 AM</td>
+            <td class="available">Available</td>
+            <td class="unavailable">—</td>
+            <td class="available">Available</td>
+            <td class="unavailable">—</td>
+            <td class="available">Available</td>
+            <td class="unavailable">—</td>
+            <td class="unavailable">—</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+
+    <div class="schedule-note">
+      Green indicates available slots. All class timings
+      are subject to final confirmation.
+    </div>
+
+  </div>
+</section>
+
+<!-- PARENT PREFERRED SCHEDULE -->
+
+<section>
+
+  <div class="preferred">
+
+    <h3>Preferred Schedule – Parents' Selection</h3>
+
+    <p>
+      Parents can choose their preferred days and available
+      time slots from the following options.
+    </p>
+
+    <ul>
+
+      <li>
+        <strong>Monday</strong>
+        5:00 – 6:00 AM EST<br>
+        6:00 – 7:00 AM EST
+      </li>
+
+      <li>
+        <strong>Tuesday</strong>
+        5:00 – 6:00 AM EST
+      </li>
+
+      <li>
+        <strong>Wednesday</strong>
+        5:00 – 6:00 AM EST<br>
+        6:00 – 7:00 AM EST
+      </li>
+
+      <li>
+        <strong>Thursday</strong>
+        5:00 – 6:00 AM EST
+      </li>
+
+    </ul>
+
+  </div>
+
+</section>
+
+<!-- TRAINER -->
+
+<section>
+
+  <div class="section-heading">
+    <h2>Your Mathematics Trainer</h2>
+  </div>
+
+  <div class="trainer">
+
+    <div class="avatar">S</div>
+
+    <div>
+      <h3>Saksham</h3>
+      <p>Mathematics Trainer · One-to-one online sessions</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FINAL CTA -->
+
+<div class="cta">
+
+  <h2>Let's Get Started!</h2>
+
+  <p>
+    Choose your preferred days and time slots.
+    We can then finalise the learning schedule.
+  </p>
+
+  <a href="mailto:openedlabs@gmail.com?subject=Math%20Training%20Proposal">
+    Discuss This Proposal →
+  </a>
+
+</div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+
+    <span>
+      © <span id="year"></span> Math
+      · Powered by openEd Labs
+    </span>
+
+    <a href="https://openedlabs.eduspace.work" target="_blank" rel="noopener">
+      openedlabs.eduspace.work
+    </a>
+
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
+
