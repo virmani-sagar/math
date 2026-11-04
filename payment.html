@@ -1,0 +1,534 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101828">
+<title>Secure Payment Details | Math</title>
+
+<style>
+:root {
+  --navy: #101828;
+  --blue: #315efb;
+  --muted: #667085;
+  --border: #e5eaf3;
+  --bg: #f7f8fc;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: #172033;
+  line-height: 1.6;
+}
+
+.topbar {
+  background: var(--navy);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+}
+
+.topbar a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+header {
+  max-width: 900px;
+  margin: auto;
+  padding: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.logo span { color: var(--blue); }
+
+.container {
+  max-width: 760px;
+  margin: 25px auto 65px;
+  padding: 0 20px;
+}
+
+/* PASSWORD SCREEN */
+
+.lock-card {
+  max-width: 440px;
+  margin: 50px auto;
+  padding: 35px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 12px 35px #1018280b;
+}
+
+.lock-icon {
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 18px;
+  display: grid;
+  place-items: center;
+  background: #edf1ff;
+  border-radius: 18px;
+  font-size: 27px;
+}
+
+h1 {
+  font-size: 27px;
+  letter-spacing: -.7px;
+  margin-bottom: 8px;
+}
+
+.lock-card p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  font-size: 15px;
+  outline: none;
+  margin-bottom: 13px;
+}
+
+input:focus {
+  border-color: var(--blue);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.unlock-btn {
+  width: 100%;
+  background: var(--blue);
+  color: white;
+  padding: 14px;
+}
+
+.error {
+  color: #c0392b;
+  font-size: 13px;
+  margin-top: 12px;
+  display: none;
+}
+
+/* PAYMENT CONTENT */
+
+#paymentContent { display: none; }
+
+.intro {
+  margin: 25px 0;
+}
+
+.intro .tag {
+  display: inline-block;
+  background: #eaf0ff;
+  color: #3150b8;
+  border-radius: 30px;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: .7px;
+}
+
+.intro h1 {
+  font-size: 36px;
+  margin: 14px 0 8px;
+}
+
+.intro p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.summary {
+  background: linear-gradient(120deg, #17284d, #315efb);
+  color: white;
+  padding: 27px;
+  border-radius: 17px;
+  margin: 22px 0;
+}
+
+.summary small {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.amount {
+  font-size: 39px;
+  font-weight: 900;
+  margin: 7px 0;
+}
+
+.summary p {
+  color: #e0e8ff;
+  font-size: 13px;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 23px;
+  margin: 18px 0;
+}
+
+.card h2 {
+  font-size: 19px;
+  margin-bottom: 15px;
+}
+
+.account-row {
+  padding: 12px 0;
+  border-bottom: 1px solid #edf0f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  font-size: 13px;
+}
+
+.account-row:last-child { border-bottom: none; }
+
+.account-row span {
+  color: var(--muted);
+}
+
+.account-row strong {
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.copy-btn {
+  color: var(--blue);
+  background: #edf1ff;
+  padding: 7px 10px;
+  margin-left: 6px;
+  font-size: 11px;
+}
+
+.note {
+  background: #fff8e8;
+  border: 1px solid #f3e3bd;
+  padding: 16px;
+  border-radius: 11px;
+  font-size: 13px;
+  color: #76561a;
+  margin: 20px 0;
+}
+
+.steps {
+  padding-left: 20px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.steps li { margin: 9px 0; }
+
+.contact {
+  background: var(--navy);
+  color: white;
+  border-radius: 15px;
+  padding: 24px;
+  margin-top: 25px;
+}
+
+.contact p {
+  color: #cbd5e1;
+  font-size: 13px;
+  margin: 7px 0 15px;
+}
+
+.contact a {
+  color: white;
+  font-weight: bold;
+}
+
+.logout {
+  background: #edf1ff;
+  color: var(--blue);
+  padding: 9px 13px;
+  margin-top: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: var(--muted);
+  font-size: 12px;
+  border-top: 1px solid var(--border);
+}
+
+footer a { color: var(--blue); }
+
+@media(max-width:520px) {
+  .lock-card { padding: 25px 20px; }
+  .intro h1 { font-size: 30px; }
+  .account-row { align-items: flex-start; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  Powered by
+  <a href="https://openedlabs.eduspace.work" target="_blank">
+    openEd Labs
+  </a>
+</div>
+
+<header>
+  <a href="index.html" class="logo">math<span>.</span></a>
+  <a href="proposal.html" style="color:#315efb;font-size:13px;font-weight:bold;text-decoration:none">
+    View Proposal
+  </a>
+</header>
+
+<main class="container">
+
+<!-- PASSWORD PROTECTION -->
+
+<div class="lock-card" id="lockScreen">
+
+  <div class="lock-icon">🔐</div>
+
+  <h1>Payment Information</h1>
+
+  <p>
+    This page contains payment instructions for the
+    mathematics training programme. Enter the password
+    shared with you to continue.
+  </p>
+
+  <form id="passwordForm">
+    <input
+      type="password"
+      id="password"
+      placeholder="Enter access password"
+      autocomplete="current-password"
+      required
+    >
+
+    <button class="unlock-btn" type="submit">
+      Unlock Payment Details
+    </button>
+
+    <div class="error" id="errorMessage">
+      Incorrect password. Please try again.
+    </div>
+  </form>
+
+</div>
+
+<!-- PAYMENT DETAILS -->
+
+<div id="paymentContent">
+
+  <div class="intro">
+    <span class="tag">PAYMENT INSTRUCTIONS</span>
+    <h1>Complete Your Enrolment</h1>
+    <p>
+      Thank you for choosing Math, powered by openEd Labs.
+      Please review the payment details below.
+    </p>
+  </div>
+
+  <div class="summary">
+    <small>MONTHLY PROGRAMME FEE</small>
+    <div class="amount">₹14,000</div>
+    <p>Combined Grade 6 and Grade 8 programme</p>
+    <p>Diwali coupon discount: ₹1,000</p>
+    <p><strong>Final payable amount: ₹13,000</strong></p>
+    <p>Coupon validity: Through 5 November 2026</p>
+  </div>
+
+  <div class="card">
+
+    <h2>🏦 Bank Transfer Details</h2>
+
+    <div class="account-row">
+      <span>Account Holder</span>
+      <strong>YOUR ACCOUNT HOLDER NAME</strong>
+    </div>
+
+    <div class="account-row">
+      <span>Bank Name</span>
+      <strong>OPENED LABS</strong>
+    </div>
+
+    <div class="account-row">
+      <span>Account Number</span>
+      <strong>
+        6167002100002061
+        <button class="copy-btn" onclick="copyText('YOUR ACCOUNT NUMBER')">
+          Copy
+        </button>
+      </strong>
+    </div>
+
+    <div class="account-row">
+      <span>IFSC Code</span>
+      <strong>
+        PUNB0616700
+        <button class="copy-btn" onclick="copyText('YOUR IFSC CODE')">
+          Copy
+        </button>
+      </strong>
+    </div>
+
+    <div class="account-row">
+      <span>Branch</span>
+      <strong>CHAMBAGHAT, SOLAN</strong>
+    </div>
+
+  </div>
+
+  <div class="card">
+
+    <h2>📱 UPI Payment</h2>
+
+    <div class="account-row">
+      <span>UPI ID</span>
+      <strong>
+        openedlabs@okicici
+        <button class="copy-btn" onclick="copyText('YOUR-UPI-ID')">
+          Copy
+        </button>
+      </strong>
+    </div>
+
+    <p style="font-size:12px;color:#667085;margin-top:12px">
+      Replace this section with your verified UPI ID or
+      add your UPI QR code before sharing the page.
+    </p>
+
+  </div>
+
+  <div class="note">
+    <strong>Important:</strong>
+    Please verify the account holder name and bank details
+    before transferring funds. Do not share your UPI PIN,
+    OTP, card PIN or banking password with anyone.
+  </div>
+
+  <div class="card">
+
+    <h2>Payment Confirmation</h2>
+
+    <ol class="steps">
+      <li>Transfer the applicable programme fee.</li>
+      <li>Keep the transaction reference number.</li>
+      <li>Share the payment confirmation with openEd Labs.</li>
+      <li>We will confirm the payment and coordinate the class schedule.</li>
+    </ol>
+
+  </div>
+
+  <div class="contact">
+    <h2>Need Assistance?</h2>
+    <p>
+      For payment-related queries or confirmation,
+      contact openEd Labs.
+    </p>
+
+    <a href="mailto:openedlabs@gmail.com?subject=Mathematics%20Programme%20Payment">
+      openedlabs@gmail.com
+    </a>
+
+    <br><br>
+
+    <a href="https://wa.me/919625188625" target="_blank">
+      WhatsApp: +91 9625188625
+    </a>
+  </div>
+
+  <button class="logout" onclick="lockPage()">
+    Lock Page
+  </button>
+
+</div>
+
+</main>
+
+<footer>
+  © <span id="year"></span> Math · Powered by
+  <a href="https://openedlabs.eduspace.work" target="_blank">
+    openEd Labs
+  </a>
+</footer>
+
+<script>
+/*
+  IMPORTANT:
+  This is a simple client-side access screen.
+  The password is visible in the page source.
+  Do not use it to protect confidential banking information.
+*/
+
+const ACCESS_PASSWORD = "Math@G6G8#26Q7!";
+
+const form = document.getElementById("passwordForm");
+const passwordInput = document.getElementById("password");
+const errorMessage = document.getElementById("errorMessage");
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  if (passwordInput.value === ACCESS_PASSWORD) {
+    document.getElementById("lockScreen").style.display = "none";
+    document.getElementById("paymentContent").style.display = "block";
+    errorMessage.style.display = "none";
+    passwordInput.value = "";
+  } else {
+    errorMessage.style.display = "block";
+    passwordInput.value = "";
+  }
+});
+
+function lockPage() {
+  document.getElementById("paymentContent").style.display = "none";
+  document.getElementById("lockScreen").style.display = "block";
+  passwordInput.value = "";
+}
+
+function copyText(value) {
+  navigator.clipboard.writeText(value)
+    .then(() => alert("Copied to clipboard"))
+    .catch(() => alert("Unable to copy. Please copy manually."));
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
+
