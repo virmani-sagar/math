@@ -1,0 +1,882 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101828">
+
+<title>Freelance Agreement | Math – OPENED LABS</title>
+
+<style>
+:root {
+  --navy: #14213d;
+  --blue: #315efb;
+  --orange: #f59e0b;
+  --text: #202938;
+  --muted: #667085;
+  --border: #e2e7ef;
+  --background: #f4f6fa;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.65;
+}
+
+.topbar {
+  background: var(--navy);
+  color: white;
+  text-align: center;
+  padding: 10px 15px;
+  font-size: 12px;
+}
+
+.topbar a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.toolbar {
+  max-width: 950px;
+  margin: 18px auto 0;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand {
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.brand span { color: var(--blue); }
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.actions button {
+  border: 0;
+  background: var(--navy);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 7px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.actions button.secondary {
+  background: white;
+  color: var(--navy);
+  border: 1px solid var(--border);
+}
+
+.document {
+  max-width: 900px;
+  margin: 22px auto 55px;
+  padding: 55px 65px;
+  background: white;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 35px rgba(16, 24, 40, .06);
+}
+
+.document-header {
+  text-align: center;
+  padding-bottom: 30px;
+  border-bottom: 2px solid var(--navy);
+  margin-bottom: 30px;
+}
+
+.document-header .eyebrow {
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.document-header h1 {
+  color: var(--navy);
+  font-size: 29px;
+  line-height: 1.25;
+  margin: 12px 0 8px;
+}
+
+.document-header p {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 3px 0;
+}
+
+.document-header .brand-line {
+  margin-top: 18px;
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--navy);
+}
+
+.intro-note {
+  background: #f2f5ff;
+  border-left: 4px solid var(--blue);
+  padding: 15px 18px;
+  margin: 25px 0;
+  font-size: 13px;
+}
+
+.parties {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin: 20px 0 28px;
+}
+
+.party {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.party h3 {
+  margin: 0 0 12px;
+  color: var(--blue);
+  font-size: 14px;
+}
+
+.party p {
+  font-size: 13px;
+  margin: 5px 0;
+  overflow-wrap: anywhere;
+}
+
+h2 {
+  color: var(--navy);
+  font-size: 17px;
+  margin: 29px 0 10px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  color: var(--navy);
+  font-size: 14px;
+  margin: 17px 0 7px;
+}
+
+p, li { font-size: 13px; }
+
+p {
+  margin: 8px 0;
+}
+
+ul, ol {
+  padding-left: 22px;
+  margin: 8px 0 14px;
+}
+
+li {
+  margin: 5px 0;
+  padding-left: 3px;
+}
+
+.clause { margin-bottom: 18px; }
+
+.clause p { text-align: justify; }
+
+.highlight {
+  background: #fff8e8;
+  border: 1px solid #f4e3b8;
+  border-radius: 8px;
+  padding: 13px 16px;
+  margin: 14px 0;
+}
+
+.highlight strong { color: #805b13; }
+
+.acceptance {
+  background: #f2f5ff;
+  border: 1px solid #dce5ff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.acceptance h3 {
+  margin-top: 0;
+  font-size: 15px;
+}
+
+.acceptance p {
+  font-size: 13px;
+}
+
+.footer-note {
+  border-top: 1px solid var(--border);
+  margin-top: 35px;
+  padding-top: 15px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+@media(max-width:650px) {
+  .document {
+    margin: 15px 10px 30px;
+    padding: 28px 20px;
+  }
+
+  .parties { grid-template-columns: 1fr; }
+
+  .document-header h1 { font-size: 24px; }
+
+  .toolbar { padding: 0 12px; }
+
+  .actions button {
+    padding: 9px 10px;
+    font-size: 11px;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 17mm 16mm;
+  }
+
+  body {
+    background: white;
+    color: #111;
+    font-size: 11px;
+  }
+
+  .topbar, .toolbar { display: none !important; }
+
+  .document {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+  }
+
+  .document-header { margin-top: 0; }
+
+  h2 { page-break-after: avoid; }
+
+  .clause, .party, .acceptance {
+    page-break-inside: avoid;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  An official freelance engagement document by
+  <a href="https://openedlabs.eduspace.work">
+    OPENED LABS
+  </a>
+</div>
+
+<div class="toolbar">
+  <a class="brand" href="https://math.eduspace.work">
+    math<span>.</span>
+  </a>
+
+  <div class="actions">
+    <button class="secondary"
+      onclick="window.location.href='https://math.eduspace.work'">
+      Math Website
+    </button>
+
+    <button onclick="window.print()">
+      Print / Save PDF
+    </button>
+  </div>
+</div>
+
+<main class="document">
+
+  <div class="document-header">
+    <div class="eyebrow">Freelance Engagement Agreement</div>
+
+    <h1>
+      FREELANCE TRAINER &<br>
+      PROGRAMME MANAGER AGREEMENT
+    </h1>
+
+    <p>Mathematics Education Programme</p>
+    <p>The effective date shall be the date of the Freelancer's written acceptance by email.</p>
+
+    <div class="brand-line">
+      Math – math.eduspace.work<br>
+      Powered by OPENED LABS
+    </div>
+  </div>
+
+  <div class="intro-note">
+    This Agreement sets out the terms and responsibilities
+    governing the freelance engagement of the individual
+    identified below for the Math education programme
+    operated by OPENED LABS.
+  </div>
+
+  <h2>1. Parties to the Agreement</h2>
+
+  <p>
+    This Freelance Trainer & Programme Manager Agreement
+    ("Agreement") is entered into between the following parties:
+  </p>
+
+  <div class="parties">
+
+    <div class="party">
+      <h3>FIRST PARTY – ORGANISATION</h3>
+
+      <p><strong>Organisation:</strong> OPENED LABS</p>
+      <p><strong>Programme:</strong> Math</p>
+      <p><strong>Website:</strong> math.eduspace.work</p>
+      <p><strong>Organisation Website:</strong> openedlabs.eduspace.work</p>
+      <p><strong>Email:</strong> openedlabs@gmail.com</p>
+
+      <p>Hereinafter referred to as the "Organisation".</p>
+    </div>
+
+    <div class="party">
+      <h3>SECOND PARTY – FREELANCER</h3>
+
+      <p><strong>Name:</strong> Saksham</p>
+      <p><strong>Designation:</strong> Freelance Mathematics Trainer & Programme Manager</p>
+      <p><strong>Email:</strong> As provided to the Organisation</p>
+      <p><strong>Contact:</strong> As provided to the Organisation</p>
+      <p><strong>Address:</strong> As provided to the Organisation</p>
+
+      <p>Hereinafter referred to as the "Freelancer".</p>
+    </div>
+
+  </div>
+
+  <p>
+    The Organisation and the Freelancer may individually be
+    referred to as a "Party" and collectively as the "Parties".
+  </p>
+
+  <div class="clause">
+    <h2>2. Purpose and Nature of Engagement</h2>
+
+    <p>
+      The Organisation engages the Freelancer in a dual
+      professional capacity as a Freelance Mathematics Trainer
+      and Programme Manager for the Math education services
+      offered through math.eduspace.work.
+    </p>
+
+    <p>
+      The engagement covers academic delivery, student
+      coordination, programme administration and related
+      responsibilities required for the effective operation
+      of the mathematics training programme.
+    </p>
+
+    <p>
+      The Freelancer agrees to perform the assigned services
+      responsibly, professionally and in accordance with
+      the Organisation's academic standards, programme
+      guidelines and reasonable operational instructions.
+    </p>
+  </div>
+
+  <div class="clause">
+    <h2>3. Role and Responsibilities</h2>
+
+    <h3>3.1 Mathematics Trainer</h3>
+
+    <p>The Freelancer shall be responsible for:</p>
+
+    <ul>
+      <li>Conducting live, personalised one-to-one online mathematics classes for assigned students.</li>
+      <li>Providing mathematics training across the school grades assigned by the Organisation.</li>
+      <li>Following the relevant academic curriculum, including US Common Core where applicable to the assigned programme.</li>
+      <li>Preparing lesson plans, exercises, practice materials and revision activities.</li>
+      <li>Explaining mathematical concepts in an age-appropriate and understandable manner.</li>
+      <li>Monitoring student participation, understanding and academic progress.</li>
+      <li>Conducting assessments and providing constructive feedback.</li>
+      <li>Maintaining accurate attendance and class-completion records.</li>
+      <li>Providing academic updates to parents or guardians through approved communication channels.</li>
+      <li>Supporting additional academic sessions when required and mutually agreed.</li>
+    </ul>
+
+    <h3>3.2 Programme Manager – Math</h3>
+
+    <p>The Freelancer shall also assist in:</p>
+
+    <ul>
+      <li>Coordinating the delivery of assigned mathematics programmes.</li>
+      <li>Managing student schedules and class coordination.</li>
+      <li>Communicating with parents or guardians regarding class schedules and academic matters.</li>
+      <li>Monitoring attendance, class completion and programme continuity.</li>
+      <li>Maintaining student progress records and programme-related documentation.</li>
+      <li>Coordinating student onboarding and academic requirements.</li>
+      <li>Reporting operational concerns, complaints and scheduling issues to the Organisation.</li>
+      <li>Supporting the implementation of academic policies and programme guidelines.</li>
+      <li>Providing periodic updates regarding programme activities and student progress.</li>
+    </ul>
+
+    <h3>3.3 General Professional Responsibilities</h3>
+
+    <ul>
+      <li>Maintain punctuality, reliability and professional conduct.</li>
+      <li>Communicate any planned unavailability in advance.</li>
+      <li>Protect the reputation and interests of the Organisation.</li>
+      <li>Follow the Organisation's approved communication and operational procedures.</li>
+      <li>Obtain approval before making commitments outside the assigned responsibilities.</li>
+    </ul>
+  </div>
+
+  <div class="clause">
+    <h2>4. Programme Delivery and Scheduling</h2>
+
+    <p>
+      The Freelancer shall deliver classes according to the
+      schedule agreed with the Organisation and the relevant
+      parents or guardians.
+    </p>
+
+    <ul>
+      <li>Classes shall generally be conducted through live online sessions.</li>
+      <li>Class frequency, duration and scheduling shall follow the applicable student programme or proposal.</li>
+      <li>Any changes to confirmed schedules shall be coordinated with the Organisation and affected parents or guardians.</li>
+      <li>Missed, rescheduled or additional classes shall be handled according to the applicable programme arrangements.</li>
+      <li>The Freelancer shall maintain appropriate records of classes conducted and pending sessions.</li>
+    </ul>
+
+    <p>
+      The Freelancer shall not independently change a student's
+      agreed programme structure, class commitments or fees
+      without the Organisation's approval.
+    </p>
+  </div>
+
+  <div class="clause">
+    <h2>5. Compensation and Payment Terms</h2>
+
+    <p>
+      The Freelancer's compensation for training, programme
+      management and any additional assigned responsibilities
+      shall be as discussed and mutually agreed between
+      the Parties.
+    </p>
+
+    <ul>
+      <li><strong>Compensation:</strong> As discussed and mutually agreed.</li>
+      <li><strong>Payment cycle:</strong> As mutually agreed.</li>
+      <li><strong>Payment method:</strong> As discussed and mutually agreed.</li>
+      <li><strong>Additional assignments:</strong> Compensation, where applicable, shall be mutually agreed before the work is undertaken.</li>
+    </ul>
+
+    <p>
+      Any revision or change to the agreed compensation
+      arrangement shall require mutual confirmation in writing.
+    </p>
+
+    <p>
+      The Freelancer shall not independently collect student
+      programme fees, retain payments, offer unauthorised
+      discounts or make financial commitments on behalf of
+      the Organisation.
+    </p>
+
+    <p>
+      Any applicable tax obligations shall be handled by
+      the respective Parties in accordance with applicable law.
+    </p>
+  </div>
+
+  <div class="clause">
+    <h2>6. Student Enrolment and Programme Administration</h2>
+
+    <p>
+      Student enrolment, programme pricing, fee structures,
+      scholarships, discounts, promotional offers and official
+      payment arrangements shall remain under the authority
+      of the Organisation.
+    </p>
+
+    <p>The Freelancer shall:</p>
+
+    <ul>
+      <li>Follow the student programme and fee arrangements communicated by the Organisation.</li>
+      <li>Provide accurate academic and scheduling information to parents.</li>
+      <li>Refer payment-related queries to the Organisation's authorised contact.</li>
+      <li>Not make independent promises regarding discounts, refunds, scholarships or financial benefits.</li>
+      <li>Not redirect students or parents to personal payment accounts or unauthorised services.</li>
+    </ul>
+  </div>
+
+  <div class="clause">
+    <h2>7. Academic Quality and Performance</h2>
+
+    <p>
+      The Freelancer shall maintain appropriate teaching
+      quality and programme standards.
+    </p>
+
+    <p>Performance may be reviewed on the basis of:</p>
+
+    <ul>
+      <li>Teaching quality and preparation.</li>
+      <li>Class punctuality and consistency.</li>
+      <li>Student engagement and understanding.</li>
+      <li>Completion of agreed classes.</li>
+      <li>Student progress and assessment records.</li>
+      <li>Parent communication and feedback.</li>
+      <li>Accuracy of programme documentation.</li>
+      <li>Compliance with the Organisation's policies.</li>
+    </ul>
+
+    <p>
+      The Freelancer acknowledges that academic results
+      depend on several factors, including student participation,
+      practice, attendance and individual learning requirements.
+      No particular examination score or academic outcome
+      is guaranteed.
+    </p>
+  </div>
+
+  <div class="clause">
+    <h2>8. Confidentiality and Data Protection</h2>
+
+    <p>
+      During the engagement, the Freelancer may have access
+      to confidential Organisation and student information.
+      Such information includes, but is not limited to:
+    </p>
+
+    <ul>
+      <li>Student and parent contact details.</li>
+      <li>Student academic records, assessments and progress reports.</li>
+      <li>Programme fees, payment information and business arrangements.</li>
+      <li>Internal documents, training resources and operational processes.</li>
+      <li>Login credentials, administrative access and unpublished website information.</li>
+      <li>Business plans, proposals and other non-public information.</li>
+    </ul>
+
+    <p>The Freelancer agrees to:</p>
+
+    <ul>
+      <li>Keep confidential information secure and private.</li>
+      <li>Use such information only for authorised programme responsibilities.</li>
+      <li>Not disclose student or parent information to unauthorised persons.</li>
+      <li>Not use student contact details for personal or unrelated commercial purposes.</li>
+      <li>Protect account credentials and access to Organisation systems.</li>
+      <li>Promptly report suspected data loss, unauthorised access or disclosure.</li>
+      <li>Return or securely delete confidential information when the engagement ends, subject to applicable legal requirements.</li>
+    </ul>
+
+    <p>
+      These confidentiality obligations shall continue after
+      termination of this Agreement.
+    </p>
+  </div>
+
+  <div class="clause">
+    <h2>9. Intellectual Property and Work Ownership</h2>
+
+    <p>
+      The Organisation's brand identity, website, logos,
+      programme structure, student database, business documents,
+      templates and other Organisation-provided materials
+      shall remain the property of the Organisation or their
+      respective rights holders.
+    </p>
+
+    <p>
+      Materials specifically commissioned by the Organisation
+      and created by the Freelancer for the assigned programme
+      shall be owned by the Organisation upon payment of
+      the agreed compensation, to the extent permitted by law.
+    </p>
+
+    <p>
+      Pre-existing materials independently owned by the
+      Freelancer shall remain the Freelancer's property unless
+      otherwise agreed in writing.
+    </p>
+
+    <p>
+      The Freelancer shall not commercially distribute
+      confidential Organisation materials or student-specific
+      learning records without authorisation.
+    </p>
+  </div>
+
+  <div class="clause">
+    <h2>10. Brand Representation and Authority</h2>
+
+    <p>
+      The Freelancer may identify themselves as an authorised
+      Freelance Mathematics Trainer and Programme Manager
+      associated with the Math programme during the period
+      of engagement.
+    </p>
+
+    <p>The Freelancer shall not:</p>
+
+    <ul>
+      <li>Represent themselves as the owner or founder of OPENED LABS.</li>
+      <li>Claim ownership of the Organisation's website, brand, domain or business identity.</li>
+      <li>Make unauthorised business, financial or contractual commitments.</li>
+      <li>Publish official announcements or promotional material without required approval.</li>
+      <li>Use the Organisation's name or branding for unrelated activities.</li>
+    </ul>
+  </div>
+
+  <div class="clause">
+    <h2>11. Student Safety and Professional Conduct</h2>
+
+    <p>
+      The Freelancer acknowledges that the programme may
+      involve children and school-age students.
+    </p>
+
+    <p>The Freelancer shall:</p>
+
+    <ul>
+      <li>Maintain respectful, appropriate and professional communication.</li>
+      <li>Maintain appropriate professional boundaries with students.</li>
+      <li>Use approved platforms and channels for classes and programme communication.</li>
+      <li>Keep parents or guardians appropriately informed.</li>
+      <li>Not request unnecessary personal or sensitive information from students.</li>
+      <li>Not record, publish or distribute student images, voices or class sessions without the required authorisation.</li>
+      <li>Report safeguarding concerns or inappropriate conduct to the Organisation promptly.</li>
+      <li>Follow applicable child-safety and data-protection requirements.</li>
+    </ul>
+  </div>
+
+  <div class="clause">
+    <h2>12. Conflict of Interest and Student Relationships</h2>
+
+    <p>
+      The Freelancer may undertake other professional or
+      freelance assignments, provided such activities do not
+      interfere with agreed responsibilities or misuse the
+      Organisation's confidential information.
+    </p>
+
+    <p>The Freelancer shall not:</p>
+
+    <ul>
+      <li>Divert students introduced through the Organisation into unauthorised private paid arrangements.</li>
+      <li>Use Organisation student or parent contact lists for personal commercial activities.</li>
+      <li>Misrepresent the Organisation's services, pricing or programme arrangements.</li>
+      <li>Use confidential business information to obtain an unfair commercial advantage.</li>
+    </ul>
+
+    <p>
+      Nothing in this Agreement shall prevent the Freelancer
+      from undertaking lawful independent professional work,
+      subject to the confidentiality and other obligations
+      stated herein.
+    </p>
+  </div>
+
+  <div class="clause">
+    <h2>13. Independent Freelance Relationship</h2>
+
+    <p>
+      The Parties expressly acknowledge that this engagement
+      is a freelance independent-contractor arrangement
+      and does not, by itself, create an employer-employee,
+      partnership or joint-venture relationship.
+    </p>
+
+    <ul>
+      <li>The Freelancer shall perform the agreed services as an independent professional.</li>
+      <li>The Freelancer shall not be treated as a permanent, full-time or part-time employee solely by virtue of this Agreement.</li>
+      <li>The Freelancer shall be responsible for their own professional expenses unless otherwise agreed.</li>
+      <li>The Freelancer shall not be entitled to employee benefits solely by virtue of this freelance engagement, subject to applicable law.</li>
+      <li>The Freelancer shall have no authority to bind the Organisation contractually or financially without written authorisation.</li>
+    </ul>
+
+    <p>
+      The actual nature of the working relationship shall
+      be determined in accordance with applicable law,
+      regardless of the description used in this Agreement.
+    </p>
+  </div>
+
+  <div class="clause">
+    <h2>14. Term and Termination</h2>
+
+    <p>
+      This Agreement shall commence from the date of acceptance
+      and shall continue until terminated by either Party
+      in accordance with this section.
+    </p>
+
+    <p>
+      Either Party may end the engagement by providing
+      reasonable prior written notice, with the notice
+      period to be mutually agreed.
+    </p>
+
+    <p>
+      The Organisation may suspend assigned responsibilities
+      or terminate the engagement in the event of a serious
+      breach, including:
+    </p>
+
+    <ul>
+      <li>Misuse or unauthorised disclosure of confidential information.</li>
+      <li>Misuse of student or parent information.</li>
+      <li>Unauthorised collection or diversion of student payments.</li>
+      <li>Serious misconduct or breach of student-safety requirements.</li>
+      <li>Fraudulent representation or misuse of Organisation branding.</li>
+      <li>Repeated failure to fulfil agreed responsibilities.</li>
+    </ul>
+
+    <p>Upon termination:</p>
+
+    <ul>
+      <li>The Freelancer shall reasonably assist with the handover of pending programme responsibilities.</li>
+      <li>Outstanding undisputed compensation for services properly delivered shall be settled as mutually agreed and subject to applicable law.</li>
+      <li>Organisation documents, materials and access credentials shall be returned or appropriately removed.</li>
+      <li>The Freelancer shall cease representing themselves as an active representative of the Organisation.</li>
+      <li>Confidentiality and other obligations intended to continue after termination shall remain effective.</li>
+    </ul>
+  </div>
+
+  <div class="clause">
+    <h2>15. Policies and Operational Guidelines</h2>
+
+    <p>
+      The Freelancer agrees to follow the relevant academic,
+      student communication, programme administration,
+      privacy and operational guidelines communicated by
+      the Organisation from time to time.
+    </p>
+
+    <p>
+      Where an operational instruction conflicts with this
+      Agreement, the Parties shall clarify the matter and
+      record any agreed contractual amendment in writing.
+    </p>
+  </div>
+
+  <div class="clause">
+    <h2>16. Governing Law and Dispute Resolution</h2>
+
+    <p>
+      This Agreement shall be governed by the laws of India,
+      subject to applicable legal requirements.
+    </p>
+
+    <p>
+      The Parties shall first attempt to resolve any
+      disagreement or dispute through good-faith discussion.
+      If the matter cannot be resolved amicably, it may be
+      referred to a court or other competent forum having
+      jurisdiction under applicable law.
+    </p>
+  </div>
+
+  <div class="clause">
+    <h2>17. Amendments and General Terms</h2>
+
+    <ul>
+      <li>Any change to the terms of this Agreement shall be mutually agreed and recorded in writing.</li>
+      <li>Operational details may be communicated through authorised written communication channels.</li>
+      <li>This Agreement represents the understanding between the Parties concerning the freelance engagement.</li>
+      <li>If any provision is found unenforceable, the remaining provisions shall continue to apply to the extent permitted by law.</li>
+      <li>Both Parties confirm that they have had the opportunity to read and understand the Agreement before accepting.</li>
+    </ul>
+  </div>
+
+  <div class="clause">
+    <h2>18. Digital Acceptance and Agreement</h2>
+
+    <p>
+      This Agreement is issued electronically by OPENED LABS
+      for the freelance engagement associated with the Math
+      programme at math.eduspace.work.
+    </p>
+
+    <p>
+      No handwritten or digital signature is required for
+      acceptance of this Agreement. The Freelancer's written
+      confirmation of acceptance through an authorised email
+      or other mutually agreed electronic communication
+      channel shall constitute acknowledgement and acceptance
+      of the terms, subject to applicable law.
+    </p>
+
+    <div class="parties">
+
+      <div class="party">
+        <h3>FIRST PARTY – ORGANISATION</h3>
+        <p><strong>OPENED LABS</strong></p>
+        <p>Math – math.eduspace.work</p>
+        <p>openedlabs@gmail.com</p>
+        <p><strong>Status:</strong> Electronically issued</p>
+      </div>
+
+      <div class="party">
+        <h3>SECOND PARTY – FREELANCER</h3>
+        <p><strong>Name:</strong> Saksham</p>
+        <p><strong>Role:</strong> Freelance Mathematics Trainer & Programme Manager</p>
+        <p><strong>Status:</strong> Acceptance through written electronic confirmation</p>
+      </div>
+
+    </div>
+
+    <div class="acceptance">
+      <h3>Acceptance Statement</h3>
+
+      <p>
+        By replying with written confirmation such as:
+      </p>
+
+      <p>
+        <strong>
+          "I have read, understood and agree to the terms of
+          this Freelance Trainer & Programme Manager Agreement."
+        </strong>
+      </p>
+
+      <p>
+        the Freelancer acknowledges acceptance of this
+        Agreement, subject to applicable law.
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <strong>OPENED LABS</strong><br>
+    Math – math.eduspace.work<br>
+    openedlabs@gmail.com<br>
+    This document is intended for the freelance engagement
+    associated with the Math programme.
+  </div>
+
+</main>
+
+</body>
+</html>
