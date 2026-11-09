@@ -2,425 +2,1916 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Personalised one-to-one online mathematics training for students across all school grades.">
-<title>Math | Personalised Mathematics Learning</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-:root {
-  --blue:#315efb;
-  --navy:#101828;
-  --muted:#667085;
-  --bg:#f8faff;
-  --line:#e5eaf3;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  color:#172033;
-  background:var(--bg);
-  line-height:1.6;
-}
-a{text-decoration:none}
-.topbar{
-  background:var(--navy);
-  color:white;
-  text-align:center;
-  padding:9px;
-  font-size:12px;
-}
-.topbar a{color:white;font-weight:bold}
-header{
-  max-width:1150px;
-  margin:auto;
-  padding:22px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-.logo{
-  font-size:27px;
-  font-weight:900;
-  color:var(--navy);
-  letter-spacing:-1px;
-}
-.logo span{color:var(--blue)}
-nav{display:flex;gap:25px;align-items:center}
-nav a{font-size:14px;color:#475467;font-weight:600}
-.btn{
-  display:inline-block;
-  background:var(--blue);
-  color:white;
-  padding:12px 21px;
-  border-radius:9px;
-  font-weight:bold;
-  font-size:14px;
-  transition:.2s;
-}
-.btn:hover{background:#2448c7;transform:translateY(-2px)}
-.hero{
-  max-width:1150px;
-  margin:auto;
-  padding:75px 22px;
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:45px;
-  align-items:center;
-}
-.tag{
-  color:var(--blue);
-  font-size:12px;
-  font-weight:bold;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-h1{
-  font-size:clamp(40px,6vw,65px);
-  line-height:1.1;
-  letter-spacing:-2px;
-  margin:20px 0;
-}
-h1 span{color:var(--blue)}
-.hero p{font-size:17px;color:var(--muted);max-width:600px}
-.hero-card{
-  background:linear-gradient(140deg,#e7edff,#f0f8ff);
-  padding:35px;
-  border-radius:25px;
-}
-.lesson{
-  background:white;
-  padding:27px;
-  border-radius:17px;
-  box-shadow:0 12px 35px #1b2c5015;
-}
-.lesson h3{font-size:23px}
-.lesson div{
-  padding:12px 0;
-  border-top:1px solid #eee;
-  font-size:14px;
-}
-section{padding:65px 22px}
-.container{max-width:1150px;margin:auto}
-.heading{
-  text-align:center;
-  max-width:680px;
-  margin:0 auto 38px;
-}
-.heading h2{font-size:35px;margin:10px 0}
-.heading p{color:var(--muted)}
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-.card{
-  background:white;
-  padding:27px;
-  border:1px solid var(--line);
-  border-radius:16px;
-  transition:.2s;
-}
-.card:hover{transform:translateY(-4px);box-shadow:0 12px 30px #1720330c}
-.icon{font-size:29px;color:var(--blue)}
-.card h3{margin:10px 0}
-.card p{font-size:14px;color:var(--muted)}
-.programs{background:#f0f4ff}
-.program-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-.program{
-  background:white;
-  padding:25px;
-  border:1px solid #e5eaf3;
-  border-radius:15px;
-}
-.program strong{color:var(--blue);font-size:20px}
-.program h3{margin:10px 0}
-.program p{font-size:14px;color:var(--muted)}
-.program-note{text-align:center;color:var(--muted);font-size:13px;margin-top:20px}
-.audience{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-.audience-card{
-  padding:25px;
-  background:white;
-  border:1px solid var(--line);
-  border-radius:15px;
-}
-.audience-card h3{margin-top:0}
-.audience-card p{font-size:14px;color:var(--muted)}
-.trainer{
-  background:var(--navy);
-  color:white;
-  border-radius:20px;
-  padding:35px;
-}
-.trainer p{color:#cbd5e1}
-.trainer .tag{color:#91acff}
-.cta{
-  background:linear-gradient(120deg,#17284d,#315efb);
-  color:white;
-  border-radius:20px;
-  padding:45px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-}
-.cta h2{margin:0}
-.cta p{color:#dbe5ff}
-.cta .btn{background:white;color:#2448c7}
-footer{
-  padding:25px;
-  text-align:center;
-  border-top:1px solid var(--line);
-  font-size:13px;
-  color:var(--muted);
-}
-footer a{color:var(--blue)}
-@media(max-width:750px){
-  header{padding:18px}
-  nav{gap:12px}
-  nav a:not(.btn){display:none}
-  .hero{grid-template-columns:1fr;padding-top:45px}
-  .cards,.program-grid,.audience{grid-template-columns:1fr}
-  .cta{display:block;padding:30px}
-  .cta .btn{margin-top:18px}
-}
-</style>
+  <title>Math | Personalised Online Mathematics Learning</title>
+
+  <meta name="description" content="Personalised one-to-one online mathematics learning for students of all grades and curricula worldwide. Build strong foundations, improve understanding and develop mathematical confidence.">
+
+  <meta name="keywords" content="online mathematics tutoring, maths classes, mathematics for all grades, CBSE maths, ICSE maths, Common Core maths, international mathematics tutoring">
+
+  <meta name="author" content="openEd Labs">
+  <meta name="theme-color" content="#101828">
+
+  <meta property="og:title" content="Math | Mathematics for Every Learner">
+  <meta property="og:description" content="Personalised one-to-one online mathematics learning for all grades and curricula.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://math.eduspace.work/">
+
+  <link rel="canonical" href="https://math.eduspace.work/">
+
+  <style>
+    :root {
+      --blue: #315efb;
+      --blue-dark: #2448c7;
+      --navy: #101828;
+      --text: #172033;
+      --muted: #667085;
+      --bg: #f8faff;
+      --white: #ffffff;
+      --line: #e5eaf3;
+      --light-blue: #edf2ff;
+      --shadow: 0 15px 40px rgba(16, 24, 40, .07);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .topbar {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 12px;
+      letter-spacing: .2px;
+    }
+
+    .topbar a {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .topbar a:hover {
+      text-decoration: underline;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, .96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 29px;
+      font-weight: 900;
+      color: var(--navy);
+      letter-spacing: -1.5px;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    .logo small {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 1.4px;
+      color: var(--muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      color: #475467;
+      font-weight: 700;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .nav-links .nav-highlight {
+      color: var(--blue);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--blue);
+      color: white !important;
+      padding: 13px 22px;
+      border-radius: 9px;
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid var(--blue);
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .btn:hover {
+      background: var(--blue-dark);
+      border-color: var(--blue-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--blue) !important;
+      border: 1px solid var(--blue);
+    }
+
+    .btn-outline:hover {
+      background: var(--light-blue);
+      color: var(--blue-dark) !important;
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--blue) !important;
+      border-color: white;
+    }
+
+    .btn-white:hover {
+      background: #edf2ff;
+      border-color: #edf2ff;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 0;
+      font-size: 27px;
+      color: var(--navy);
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    /* HERO */
+
+    .hero {
+      max-width: 1200px;
+      margin: auto;
+      padding: 90px 24px 85px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .tag {
+      display: inline-block;
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(40px, 5.7vw, 68px);
+      line-height: 1.08;
+      letter-spacing: -2.8px;
+      color: var(--navy);
+      margin: 19px 0;
+    }
+
+    h1 span {
+      color: var(--blue);
+    }
+
+    .hero-description {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 17px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-note {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 24px;
+    }
+
+    .hero-visual {
+      position: relative;
+      background: linear-gradient(145deg, #e6edff, #f2f7ff);
+      border-radius: 28px;
+      padding: 32px;
+      overflow: hidden;
+    }
+
+    .math-symbol {
+      position: absolute;
+      font-size: 80px;
+      font-weight: 900;
+      color: rgba(49, 94, 251, .09);
+      user-select: none;
+    }
+
+    .symbol-one {
+      top: 0;
+      right: 25px;
+    }
+
+    .symbol-two {
+      bottom: 0;
+      left: 15px;
+    }
+
+    .learning-card {
+      position: relative;
+      background: white;
+      padding: 30px;
+      border-radius: 19px;
+      box-shadow: var(--shadow);
+    }
+
+    .learning-card h3 {
+      font-size: 24px;
+      line-height: 1.3;
+      color: var(--navy);
+      margin: 12px 0 20px;
+    }
+
+    .learning-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 0;
+      border-top: 1px solid var(--line);
+      font-size: 14px;
+      color: #475467;
+    }
+
+    .check {
+      color: var(--blue);
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    /* COMMON SECTIONS */
+
+    section {
+      padding: 80px 24px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin: 0 auto 45px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      color: var(--navy);
+      font-size: clamp(29px, 4vw, 41px);
+      line-height: 1.2;
+      letter-spacing: -1.2px;
+      margin: 12px 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* APPROACH */
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .feature-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      padding: 30px;
+      transition: .25s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 13px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--light-blue);
+      color: var(--blue);
+      font-size: 25px;
+      font-weight: 800;
+    }
+
+    .feature-card h3 {
+      color: var(--navy);
+      margin: 19px 0 9px;
+      font-size: 19px;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    /* PROGRAMMES */
+
+    .programs {
+      background: #f0f4ff;
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .program-card {
+      background: white;
+      border: 1px solid #e3e9f5;
+      border-radius: 17px;
+      padding: 29px;
+      transition: .25s ease;
+    }
+
+    .program-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .program-number {
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .program-card h3 {
+      color: var(--navy);
+      font-size: 21px;
+      margin: 13px 0;
+    }
+
+    .program-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .program-card ul {
+      padding-left: 18px;
+      color: #475467;
+      font-size: 13px;
+    }
+
+    .program-card li {
+      margin: 7px 0;
+    }
+
+    .program-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      max-width: 750px;
+      margin: 30px auto 0;
+    }
+
+    /* CURRICULUM */
+
+    .curriculum-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 17px;
+    }
+
+    .curriculum-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 24px;
+    }
+
+    .curriculum-card h3 {
+      font-size: 17px;
+      color: var(--navy);
+      margin: 0 0 10px;
+    }
+
+    .curriculum-card p {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .curriculum-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 25px;
+    }
+
+    /* AUDIENCE */
+
+    .audience {
+      background: #f0f4ff;
+    }
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .audience-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 29px;
+    }
+
+    .audience-card h3 {
+      color: var(--navy);
+      font-size: 20px;
+      margin-top: 0;
+    }
+
+    .audience-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    /* LEARNING PROCESS */
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .process-card {
+      padding: 25px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+    }
+
+    .process-card span {
+      display: block;
+      font-size: 30px;
+      font-weight: 900;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+
+    .process-card h3 {
+      color: var(--navy);
+      font-size: 17px;
+      margin: 0 0 8px;
+    }
+
+    .process-card p {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    /* TRAINER */
+
+    .trainer {
+      background: var(--navy);
+      color: white;
+      border-radius: 23px;
+      padding: 45px;
+      display: grid;
+      grid-template-columns: 1fr .7fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .trainer .tag {
+      color: #9db5ff;
+    }
+
+    .trainer h2 {
+      font-size: clamp(27px, 4vw, 38px);
+      line-height: 1.2;
+      margin: 14px 0;
+    }
+
+    .trainer p {
+      color: #cbd5e1;
+      font-size: 15px;
+    }
+
+    .trainer-highlight {
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: 17px;
+      padding: 28px;
+    }
+
+    .trainer-highlight h3 {
+      margin-top: 0;
+      font-size: 19px;
+    }
+
+    .trainer-highlight p {
+      font-size: 13px;
+    }
+
+    /* CTA */
+
+    .cta {
+      background: linear-gradient(120deg, #17284d, #315efb);
+      color: white;
+      padding: 48px;
+      border-radius: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .cta h2 {
+      font-size: clamp(26px, 4vw, 36px);
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .cta p {
+      color: #dbe5ff;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    /* PAGE LINKS */
+
+    .quick-links {
+      background: white;
+    }
+
+    .quick-link-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .quick-link-card {
+      border: 1px solid var(--line);
+      padding: 25px;
+      border-radius: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .quick-link-card h3 {
+      margin: 0 0 5px;
+      font-size: 18px;
+      color: var(--navy);
+    }
+
+    .quick-link-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* FAQ */
+
+    .faq-list {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .faq-item {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      padding: 19px 22px;
+      font-weight: 700;
+      color: var(--navy);
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .faq-item p {
+      padding: 0 22px 18px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #0b1220;
+      color: #cbd5e1;
+      padding: 45px 24px 20px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 35px;
+    }
+
+    .footer-brand {
+      font-size: 25px;
+      font-weight: 900;
+      color: white;
+    }
+
+    .footer-brand span {
+      color: #7795ff;
+    }
+
+    .footer-column h3 {
+      color: white;
+      font-size: 14px;
+      margin-top: 0;
+    }
+
+    .footer-column a,
+    .footer-column p {
+      display: block;
+      font-size: 13px;
+      color: #aebbd0;
+      margin: 8px 0;
+    }
+
+    .footer-column a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 35px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid #293447;
+      text-align: center;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    .footer-bottom a {
+      color: white;
+    }
+
+    /* MOBILE QUICK CONTACT */
+
+    .mobile-contact {
+      display: none;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 950px) {
+      .nav-links {
+        gap: 13px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .curriculum-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 750px) {
+      .header-inner {
+        padding: 13px 18px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 18px 22px 23px;
+        border-bottom: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 12px 0;
+        font-size: 14px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav-links .btn {
+        margin-top: 12px;
+        text-align: center;
+        border-bottom: 0;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 60px 20px;
+        gap: 35px;
+      }
+
+      h1 {
+        font-size: clamp(39px, 10vw, 55px);
+      }
+
+      .hero-visual {
+        padding: 20px;
+      }
+
+      .learning-card {
+        padding: 24px;
+      }
+
+      section {
+        padding: 65px 20px;
+      }
+
+      .features,
+      .program-grid,
+      .audience-grid,
+      .quick-link-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .curriculum-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .trainer {
+        grid-template-columns: 1fr;
+        padding: 30px;
+      }
+
+      .cta {
+        display: block;
+        padding: 32px 25px;
+      }
+
+      .cta-actions {
+        margin-top: 23px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-inner > div:first-child {
+        grid-column: 1 / -1;
+      }
+
+      .mobile-contact {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        background: white;
+        padding: 10px 13px;
+        display: flex;
+        gap: 10px;
+        box-shadow: 0 -5px 20px rgba(16, 24, 40, .12);
+      }
+
+      .mobile-contact a {
+        flex: 1;
+        text-align: center;
+        padding: 11px 8px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 700;
+        color: white;
+        background: var(--blue);
+      }
+
+      .mobile-contact a:last-child {
+        background: #16834b;
+      }
+
+      body {
+        padding-bottom: 62px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .curriculum-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions,
+      .cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-actions .btn,
+      .cta-actions .btn {
+        width: 100%;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner > div:first-child {
+        grid-column: auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="topbar">
-  Powered by
-  <a href="https://openedlabs.eduspace.work" target="_blank">openEd Labs</a>
-  &nbsp; | &nbsp;
-  <a href="https://openedlabs.eduspace.work" target="_blank">openedlabs.eduspace.work</a>
-</div>
+  <!-- TOP BAR -->
 
-<header>
-  <a href="index.html" class="logo">math<span>.</span></a>
-
-  <nav>
-    <a href="#approach">Our Approach</a>
-    <a href="#programs">Programmes</a>
-    <a href="#trainer">Trainer</a>
-    <a href="proposal.html" class="btn">View Proposal</a>
-  </nav>
-</header>
-
-<main>
-
-<div class="hero">
-  <div>
-    <div class="tag">Personalised · One-to-one · Online</div>
-
-    <h1>
-      Make Maths Click.<br>
-      <span>Build Confidence.</span>
-    </h1>
-
-    <p>
-      Personalised one-to-one mathematics training for students
-      across all school grades. Learn at your own pace with
-      dedicated guidance, concept-based teaching and individual attention.
-    </p>
-
-    <a href="#programs" class="btn">Explore Programmes →</a>
-
-    <p style="font-size:13px">
-      Mathematics for All Grades · One-to-One Online Learning
-    </p>
+  <div class="topbar">
+    A personalised mathematics learning initiative powered by
+    <a href="https://openedlabs.eduspace.work"
+       target="_blank" rel="noopener noreferrer">openEd Labs</a>
   </div>
 
-  <div class="hero-card">
-    <div class="lesson">
-      <div class="tag">Your Learning Journey</div>
-      <h3>Learn at your own pace.</h3>
-      <div>✓ Individual attention</div>
-      <div>✓ Grade-appropriate learning</div>
-      <div>✓ Concept-based teaching</div>
-      <div>✓ Personalised practice</div>
-      <div>✓ Academic progress support</div>
-    </div>
-  </div>
-</div>
+  <!-- HEADER -->
 
-<section id="approach">
-  <div class="container">
+  <header class="site-header">
+    <div class="header-inner">
 
-    <div class="heading">
-      <div class="tag">Our Approach</div>
-      <h2>Personal attention makes a difference.</h2>
-      <p>
-        Every student learns differently. Our approach focuses on
-        understanding, practice and confidence.
-      </p>
-    </div>
-
-    <div class="cards">
-      <div class="card">
-        <div class="icon">◎</div>
-        <h3>One-to-One Learning</h3>
-        <p>
-          Individual attention and explanations tailored
-          to the student's learning requirements.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="icon">⌘</div>
-        <h3>Structured Learning</h3>
-        <p>
-          Lessons designed around grade level, curriculum
-          requirements and individual academic goals.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="icon">↗</div>
-        <h3>Progress Focused</h3>
-        <p>
-          Build strong foundations, improve problem-solving
-          and develop independent learning skills.
-        </p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section class="programs" id="programs">
-  <div class="container">
-
-    <div class="heading">
-      <div class="tag">Our Programmes</div>
-      <h2>Mathematics for Every Grade</h2>
-      <p>
-        From foundational mathematics to advanced school-level
-        concepts, we provide personalised learning support
-        across all grades.
-      </p>
-    </div>
-
-    <div class="program-grid">
-
-      <div class="program">
-        <strong>Elementary</strong>
-        <h3>Foundation Mathematics</h3>
-        <p>
-          Develop number sense, arithmetic skills,
-          mathematical thinking and strong foundations.
-        </p>
-      </div>
-
-      <div class="program">
-        <strong>Middle School</strong>
-        <h3>Concept Development</h3>
-        <p>
-          Strengthen understanding of fractions, algebra,
-          geometry, ratios and problem-solving.
-        </p>
-      </div>
-
-      <div class="program">
-        <strong>High School</strong>
-        <h3>Advanced Mathematics</h3>
-        <p>
-          Focused support for algebra, geometry,
-          functions, trigonometry and higher-level topics.
-        </p>
-      </div>
-
-    </div>
-
-    <p class="program-note">
-      Curriculum and learning plans are adapted to each student's grade and academic requirements.
-    </p>
-
-  </div>
-</section>
-
-<section>
-  <div class="container">
-
-    <div class="heading">
-      <div class="tag">Who Can Join?</div>
-      <h2>Learning support for every student.</h2>
-    </div>
-
-    <div class="audience">
-
-      <div class="audience-card">
-        <h3>School Students</h3>
-        <p>
-          Personalised mathematics sessions for students
-          across elementary, middle and high school grades.
-        </p>
-      </div>
-
-      <div class="audience-card">
-        <h3>International Students</h3>
-        <p>
-          Online learning support for students studying
-          different school curricula, including US Common Core.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section id="trainer">
-  <div class="container">
-    <div class="trainer">
-      <div class="tag">Your Learning Partner</div>
-      <h2>Learn with dedicated guidance.</h2>
-      <p>
-        Our one-to-one training approach focuses on individual
-        understanding, regular practice and measurable academic progress.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="cta">
-      <div>
-        <h2>Ready to get started?</h2>
-        <p>
-          Tell us about the student's grade and learning goals.
-          We can help plan the right programme.
-        </p>
-      </div>
-
-      <a href="mailto:openedlabs@gmail.com?subject=Math%20Training%20Enquiry"
-         class="btn">
-        Enquire Now →
+      <a href="index.html" class="logo" aria-label="Math homepage">
+        math<span>.</span>
+        <small>Learn · Understand · Excel</small>
       </a>
+
+      <button class="menu-toggle"
+              id="menuToggle"
+              aria-label="Toggle navigation"
+              aria-expanded="false"
+              aria-controls="mainNav">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="mainNav">
+
+        <a href="#approach">Our Approach</a>
+        <a href="#programs">Programmes</a>
+        <a href="#curriculum">Curricula</a>
+        <a href="#trainer">Learning Support</a>
+        <a href="proposal.html" class="nav-highlight">Proposal</a>
+        <a href="payment.html" class="nav-highlight">Payment</a>
+        <a href="#contact" class="btn">Get Started →</a>
+
+      </nav>
+
     </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div>
+
+        <div class="tag">
+          Personalised · One-to-One · Online
+        </div>
+
+        <h1>
+          Mathematics for All Grades.
+          <span>Confidence for Every Learner.</span>
+        </h1>
+
+        <p class="hero-description">
+          Personalised one-to-one online mathematics learning
+          for students across all school grades and curricula.
+          From foundational concepts to advanced mathematics,
+          learn at your own pace with dedicated guidance,
+          concept-based teaching and individual attention.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#programs" class="btn">
+            Explore Programmes →
+          </a>
+
+          <a href="#contact" class="btn btn-outline">
+            Enquire Now
+          </a>
+        </div>
+
+        <p class="hero-note">
+          All Grades · All Curricula · Worldwide Online Learning
+        </p>
+
+      </div>
+
+      <div class="hero-visual">
+
+        <div class="math-symbol symbol-one">∑</div>
+        <div class="math-symbol symbol-two">π</div>
+
+        <div class="learning-card">
+
+          <div class="tag">Your Learning Journey</div>
+
+          <h3>
+            Understand mathematics.
+            Learn with confidence.
+          </h3>
+
+          <div class="learning-item">
+            <span class="check">✓</span>
+            Individual attention
+          </div>
+
+          <div class="learning-item">
+            <span class="check">✓</span>
+            Grade-appropriate learning
+          </div>
+
+          <div class="learning-item">
+            <span class="check">✓</span>
+            Curriculum-based guidance
+          </div>
+
+          <div class="learning-item">
+            <span class="check">✓</span>
+            Concept-based teaching
+          </div>
+
+          <div class="learning-item">
+            <span class="check">✓</span>
+            Personalised practice
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- APPROACH -->
+
+    <section id="approach">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="tag">Our Approach</div>
+
+          <h2>
+            Personal attention makes a difference.
+          </h2>
+
+          <p>
+            Every student learns differently. Our approach
+            focuses on understanding concepts, practising
+            consistently and developing confidence in mathematics.
+          </p>
+
+        </div>
+
+        <div class="features">
+
+          <div class="feature-card">
+
+            <div class="feature-icon">◎</div>
+
+            <h3>One-to-One Learning</h3>
+
+            <p>
+              Individual attention and explanations adapted
+              to the student's learning needs, academic level
+              and pace.
+            </p>
+
+          </div>
+
+          <div class="feature-card">
+
+            <div class="feature-icon">⌘</div>
+
+            <h3>Structured Learning</h3>
+
+            <p>
+              Learning sessions planned around the student's
+              grade, curriculum requirements and academic goals.
+            </p>
+
+          </div>
+
+          <div class="feature-card">
+
+            <div class="feature-icon">↗</div>
+
+            <h3>Conceptual Understanding</h3>
+
+            <p>
+              Build strong foundations, improve problem-solving
+              and develop independent mathematical thinking.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PROGRAMMES -->
+
+    <section class="programs" id="programs">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="tag">Our Programmes</div>
+
+          <h2>
+            Mathematics for Every Grade.
+          </h2>
+
+          <p>
+            From early mathematical foundations to advanced
+            school-level topics, learning support is adapted
+            to the student's grade and academic requirements.
+          </p>
+
+        </div>
+
+        <div class="program-grid">
+
+          <div class="program-card">
+
+            <div class="program-number">
+              Elementary School
+            </div>
+
+            <h3>Build Strong Foundations</h3>
+
+            <p>
+              Develop mathematical understanding and essential
+              skills through clear explanations and guided practice.
+            </p>
+
+            <ul>
+              <li>Number sense and arithmetic</li>
+              <li>Addition, subtraction and multiplication</li>
+              <li>Fractions and basic decimals</li>
+              <li>Shapes and basic geometry</li>
+              <li>Mathematical reasoning</li>
+            </ul>
+
+          </div>
+
+          <div class="program-card">
+
+            <div class="program-number">
+              Middle School
+            </div>
+
+            <h3>Strengthen Understanding</h3>
+
+            <p>
+              Develop confidence with more complex concepts
+              and improve mathematical reasoning.
+            </p>
+
+            <ul>
+              <li>Fractions, ratios and percentages</li>
+              <li>Pre-algebra and algebra</li>
+              <li>Geometry and measurement</li>
+              <li>Statistics and probability</li>
+              <li>Multi-step problem-solving</li>
+            </ul>
+
+          </div>
+
+          <div class="program-card">
+
+            <div class="program-number">
+              High School & Senior Secondary
+            </div>
+
+            <h3>Develop Advanced Skills</h3>
+
+            <p>
+              Focused learning support for higher-level
+              mathematical concepts and school requirements.
+            </p>
+
+            <ul>
+              <li>Algebra and advanced algebra</li>
+              <li>Geometry and trigonometry</li>
+              <li>Functions and graphs</li>
+              <li>Statistics and probability</li>
+              <li>Calculus and other advanced topics</li>
+            </ul>
+
+          </div>
+
+        </div>
+
+        <p class="program-note">
+          Learning support is available across all school grades,
+          including senior secondary levels. Specific topics and
+          learning plans are adapted to each student's curriculum
+          and academic requirements.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- CURRICULUM -->
+
+    <section id="curriculum">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="tag">Curriculum Coverage</div>
+
+          <h2>
+            One learning destination. Different curricula.
+          </h2>
+
+          <p>
+            Students can receive mathematics learning support
+            aligned with the curriculum followed by their school,
+            wherever they study.
+          </p>
+
+        </div>
+
+        <div class="curriculum-grid">
+
+          <div class="curriculum-card">
+
+            <h3>Indian Curricula</h3>
+
+            <p>
+              CBSE, ICSE and other Indian school curricula,
+              with learning support adapted to grade-level
+              requirements.
+            </p>
+
+          </div>
+
+          <div class="curriculum-card">
+
+            <h3>US Curricula</h3>
+
+            <p>
+              US Common Core and other school-specific
+              mathematics learning requirements.
+            </p>
+
+          </div>
+
+          <div class="curriculum-card">
+
+            <h3>UK Curricula</h3>
+
+            <p>
+              UK National Curriculum and relevant
+              school-level mathematics requirements.
+            </p>
+
+          </div>
+
+          <div class="curriculum-card">
+
+            <h3>International Curricula</h3>
+
+            <p>
+              Mathematics learning support adapted to
+              other international and school-specific
+              curricula.
+            </p>
+
+          </div>
+
+        </div>
+
+        <p class="curriculum-note">
+          Not limited to the curricula listed above.
+          Share your school's curriculum and learning requirements
+          to discuss a suitable learning plan.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- WHO CAN JOIN -->
+
+    <section class="audience">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="tag">Who Can Join?</div>
+
+          <h2>
+            Learning support for every student.
+          </h2>
+
+          <p>
+            Personalised mathematics learning for students
+            at different academic levels and in different
+            education systems.
+          </p>
+
+        </div>
+
+        <div class="audience-grid">
+
+          <div class="audience-card">
+
+            <h3>School Students</h3>
+
+            <p>
+              One-to-one mathematics sessions for elementary,
+              middle school, high school and senior secondary
+              students.
+            </p>
+
+          </div>
+
+          <div class="audience-card">
+
+            <h3>International Students</h3>
+
+            <p>
+              Online learning support for students studying
+              different national and international curricula
+              across countries.
+            </p>
+
+          </div>
+
+          <div class="audience-card">
+
+            <h3>Students Needing Extra Support</h3>
+
+            <p>
+              Strengthen fundamental concepts, revisit difficult
+              topics, clarify doubts and practise at an appropriate
+              learning pace.
+            </p>
+
+          </div>
+
+          <div class="audience-card">
+
+            <h3>Students Seeking Further Development</h3>
+
+            <p>
+              Improve problem-solving, explore advanced topics
+              and develop deeper mathematical understanding
+              beyond routine classroom practice.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- LEARNING PROCESS -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="tag">How Learning Works</div>
+
+          <h2>
+            A clear and focused learning process.
+          </h2>
+
+          <p>
+            A student-centred approach that puts understanding
+            before memorisation.
+          </p>
+
+        </div>
+
+        <div class="process-grid">
+
+          <div class="process-card">
+
+            <span>01</span>
+
+            <h3>Understand</h3>
+
+            <p>
+              Identify the student's grade, curriculum,
+              current understanding and learning goals.
+            </p>
+
+          </div>
+
+          <div class="process-card">
+
+            <span>02</span>
+
+            <h3>Learn</h3>
+
+            <p>
+              Explore concepts through clear explanations
+              and guided examples.
+            </p>
+
+          </div>
+
+          <div class="process-card">
+
+            <span>03</span>
+
+            <h3>Practise</h3>
+
+            <p>
+              Work through suitable exercises and
+              problem-solving activities.
+            </p>
+
+          </div>
+
+          <div class="process-card">
+
+            <span>04</span>
+
+            <h3>Progress</h3>
+
+            <p>
+              Review understanding, address learning gaps
+              and identify areas for further practice.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- LEARNING SUPPORT -->
+
+    <section id="trainer">
+
+      <div class="container">
+
+        <div class="trainer">
+
+          <div>
+
+            <div class="tag">Your Learning Partner</div>
+
+            <h2>
+              Learn with dedicated guidance.
+            </h2>
+
+            <p>
+              Our one-to-one mathematics learning approach
+              focuses on individual understanding, structured
+              practice and support based on each student's
+              academic requirements.
+            </p>
+
+            <p>
+              The objective is to help students understand
+              mathematical concepts, approach problems
+              independently and develop confidence in learning.
+            </p>
+
+          </div>
+
+          <div class="trainer-highlight">
+
+            <h3>Learning that adapts to the student.</h3>
+
+            <p>
+              <strong>Grade:</strong> All school grades
+            </p>
+
+            <p>
+              <strong>Curriculum:</strong> National and
+              international curricula
+            </p>
+
+            <p>
+              <strong>Format:</strong> Online one-to-one sessions
+            </p>
+
+            <p>
+              <strong>Focus:</strong> Concepts, practice
+              and understanding
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PROPOSAL AND PAYMENT LINKS -->
+
+    <section class="quick-links">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="tag">Getting Started</div>
+
+          <h2>
+            Explore your next step.
+          </h2>
+
+          <p>
+            Review the programme proposal or visit the
+            payment page for the relevant payment process.
+          </p>
+
+        </div>
+
+        <div class="quick-link-grid">
+
+          <div class="quick-link-card">
+
+            <div>
+              <h3>Programme Proposal</h3>
+
+              <p>
+                View the learning proposal and programme details.
+              </p>
+            </div>
+
+            <a href="proposal.html" class="btn">
+              View Proposal →
+            </a>
+
+          </div>
+
+          <div class="quick-link-card">
+
+            <div>
+              <h3>Payment</h3>
+
+              <p>
+                Visit the payment page for payment information.
+              </p>
+            </div>
+
+            <a href="payment.html" class="btn">
+              Payment Page →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- FAQ -->
+
+    <section id="faq">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="tag">Frequently Asked Questions</div>
+
+          <h2>
+            A few things you may want to know.
+          </h2>
+
+          <p>
+            Information about our personalised online
+            mathematics learning approach.
+          </p>
+
+        </div>
+
+        <div class="faq-list">
+
+          <details class="faq-item">
+
+            <summary>
+              Which grades do you teach?
+            </summary>
+
+            <p>
+              Mathematics learning support is available
+              across all school grades, from elementary
+              to senior secondary levels.
+            </p>
+
+          </details>
+
+          <details class="faq-item">
+
+            <summary>
+              Which curricula do you support?
+            </summary>
+
+            <p>
+              Learning support can be adapted to different
+              national and international curricula, including
+              CBSE, ICSE, US Common Core, UK National Curriculum
+              and other school-specific requirements.
+            </p>
+
+          </details>
+
+          <details class="faq-item">
+
+            <summary>
+              Are classes conducted online?
+            </summary>
+
+            <p>
+              Yes. The learning format is online and
+              one-to-one, allowing students to learn
+              remotely.
+            </p>
+
+          </details>
+
+          <details class="faq-item">
+
+            <summary>
+              Can the sessions be adapted to my child's needs?
+            </summary>
+
+            <p>
+              Yes. Learning topics and practice can be
+              discussed and adapted to the student's
+              grade, curriculum, current understanding
+              and academic goals.
+            </p>
+
+          </details>
+
+          <details class="faq-item">
+
+            <summary>
+              How can I enquire about classes?
+            </summary>
+
+            <p>
+              You can contact us through WhatsApp or email.
+              Share the student's grade, country, curriculum
+              and learning requirements so that we can
+              discuss the next steps.
+            </p>
+
+          </details>
+
+          <details class="faq-item">
+
+            <summary>
+              Where can I find programme and payment details?
+            </summary>
+
+            <p>
+              Visit the
+              <a href="proposal.html">proposal page</a>
+              for programme information and the
+              <a href="payment.html">payment page</a>
+              for payment details.
+            </p>
+
+          </details>
+
+          <details class="faq-item">
+
+            <summary>
+              Who powers this mathematics initiative?
+            </summary>
+
+            <p>
+              Math is a personalised mathematics learning
+              initiative powered by
+              <a href="https://openedlabs.eduspace.work"
+                 target="_blank"
+                 rel="noopener noreferrer">openEd Labs</a>.
+            </p>
+
+          </details>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="cta">
+
+          <div>
+
+            <h2>
+              Ready to get started?
+            </h2>
+
+            <p>
+              Tell us about the student's grade, curriculum
+              and learning goals. Let's discuss a suitable
+              mathematics learning plan.
+            </p>
+
+          </div>
+
+          <div class="cta-actions">
+
+            <a
+              href="https://wa.me/919625188625?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20online%20mathematics%20classes."
+              class="btn btn-white"
+              target="_blank"
+              rel="noopener noreferrer">
+              WhatsApp Us →
+            </a>
+
+            <a
+              href="mailto:openedlabs@gmail.com?subject=Math%20Training%20Enquiry"
+              class="btn btn-outline"
+              style="color:white !important;border-color:white">
+              Email Us
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div>
+
+        <div class="footer-brand">
+          math<span>.</span>
+        </div>
+
+        <p>
+          Personalised one-to-one online mathematics learning
+          for all grades and curricula.
+        </p>
+
+        <p>
+          Powered by
+          <a href="https://openedlabs.eduspace.work"
+             target="_blank"
+             rel="noopener noreferrer">
+            openEd Labs
+          </a>
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Explore</h3>
+
+        <a href="#approach">Our Approach</a>
+        <a href="#programs">Programmes</a>
+        <a href="#curriculum">Curricula</a>
+        <a href="#faq">FAQs</a>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <a href="proposal.html">Programme Proposal</a>
+        <a href="payment.html">Payment</a>
+
+        <a href="mailto:openedlabs@gmail.com">
+          openedlabs@gmail.com
+        </a>
+
+        <a href="https://wa.me/919625188625"
+           target="_blank"
+           rel="noopener noreferrer">
+          WhatsApp / Call
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      © <span id="year"></span> Math.
+      Powered by
+      <a href="https://openedlabs.eduspace.work"
+         target="_blank"
+         rel="noopener noreferrer">openEd Labs</a>.
+      All rights reserved.
+
+    </div>
+
+  </footer>
+
+  <!-- MOBILE CONTACT BAR -->
+
+  <div class="mobile-contact">
+
+    <a href="mailto:openedlabs@gmail.com?subject=Math%20Training%20Enquiry">
+      Email Us
+    </a>
+
+    <a href="https://wa.me/919625188625?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20online%20mathematics%20classes."
+       target="_blank"
+       rel="noopener noreferrer">
+      WhatsApp Us
+    </a>
+
   </div>
-</section>
 
-</main>
+  <!-- JAVASCRIPT -->
 
-<footer>
-  © <span id="year"></span> Math · Powered by
-  <a href="https://openedlabs.eduspace.work">openEd Labs</a>
-</footer>
+  <script>
 
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+    // Automatically update copyright year
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Mobile navigation
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+
+    menuToggle.addEventListener("click", function () {
+
+      const isOpen = mainNav.classList.toggle("active");
+
+      menuToggle.setAttribute("aria-expanded", isOpen);
+
+      menuToggle.textContent = isOpen ? "×" : "☰";
+
+    });
+
+    // Close mobile navigation after selecting a link
+    mainNav.querySelectorAll("a").forEach(function (link) {
+
+      link.addEventListener("click", function () {
+
+        mainNav.classList.remove("active");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+
+        menuToggle.textContent = "☰";
+
+      });
+
+    });
+
+  </script>
 
 </body>
 </html>
